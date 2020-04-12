@@ -42,7 +42,6 @@ namespace E1
                 if (vector[i] < min)
                     min = vector[i]; 
             }
-
             prom = suma / 10;
             Console.WriteLine ("El menor numero es " + min);
             Console.WriteLine ("La suma es: " + suma);
