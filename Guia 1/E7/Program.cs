@@ -11,7 +11,7 @@ namespace E7
             camaras camaras=new camaras();
             do
             {
-                Console.WriteLine("Que deasea saber ? \n1)saber peso de la foto\n2)saber el total de todas\n3)Memoria\n4)NFC");
+                Console.WriteLine("1)saber peso de la foto\n2)saber el total de todas\n3)Memoria\n4)NFC");
                 opcion=Int32.Parse(Console.ReadLine());
                 if(opcion==1)
                 {
