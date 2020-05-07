@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace E5
 {
@@ -6,7 +7,10 @@ namespace E5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string producto = "Harina";
+            int productocant = 3;
+            Supermercado super = new Supermercado (producto, productocant);
+            Console.WriteLine("Ganancias totales de hoy: "+ super.Ganancias());
         }
     }
 }
