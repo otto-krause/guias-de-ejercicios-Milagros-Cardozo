@@ -6,7 +6,7 @@ namespace E1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+           Funcion funciones = new Funcion();
         }
     }
 }
