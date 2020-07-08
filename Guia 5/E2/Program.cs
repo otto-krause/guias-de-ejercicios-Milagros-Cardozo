@@ -6,7 +6,11 @@ namespace E2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string producto = "Pepas";
+            int productocant = 5;
+            Supermercado super = new Supermercado (productocant, producto);
+            Console.WriteLine("Ganancias totales: " + super.Ganancias());
+
         }
     }
 }
