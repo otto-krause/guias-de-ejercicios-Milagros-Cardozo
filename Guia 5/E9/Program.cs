@@ -46,10 +46,8 @@ namespace E9
             .ToList()
             .ForEach(numero => Console.WriteLine(numero));
 
-            Console.WriteLine("Numeros menores a 50: ");
-            numeros.Where(numero => numero < 50)
-            .ToList()
-            .ForEach(numero => Console.WriteLine(numero));
+            int MenoresA50 = numeros.Count(numero => numero < 50);
+            Console.WriteLine("Numeros menores a 50: " + MenoresA50);
         }
     }
 }
