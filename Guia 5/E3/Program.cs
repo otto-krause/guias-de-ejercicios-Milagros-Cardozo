@@ -10,20 +10,38 @@ namespace E3
         {
             List<CaballerosDelZodiaco> caballeros = new List<CaballerosDelZodiaco>();
 
-            caballeros.Add(new CaballerosDelZodiaco ("Mills", "Hades", "Elfo", "Bronce", "Libra"));
-            caballeros.Add(new CaballerosDelZodiaco ("Marin", "Atena", "Aguila", "Plata", "Cancer"));
-            caballeros.Add(new CaballerosDelZodiaco ("Toma", "Artemis", "Icaro", "Oro", "Capricornio"));
-            caballeros.Add(new CaballerosDelZodiaco ("Aioria", "Atena", "Leon", "Oro", "Leo"));
-            caballeros.Add(new CaballerosDelZodiaco ("Perseo", "Poseidon", "Oceano", "Plata", "Acuario"));
+            Armadura armaduraDeMills = new Armadura("Elfo", "Bronce");
+            caballeros.Add(new CaballerosDelZodiaco ("Mills", "Hades", armaduraDeMills, "Libra"));
 
-            caballeros.Where(caballero => caballero.DiosQueProtege == "Athena")
-            .ToList()
-            .ForEach(caballero => Console.WriteLine(caballero.ArmaduraNombre));
+            Armadura armaduraDeMarin = new Armadura ("Aguila", "Plata");
+            caballeros.Add(new CaballerosDelZodiaco ("Marin", "Atena", armaduraDeMarin, "Cancer"));
+
+            Armadura armaduraDeToma = new Armadura ("Icaro", "Oro");
+            caballeros.Add(new CaballerosDelZodiaco ("Toma", "Artemis", armaduraDeToma, "Capricornio"));
+
+            Armadura armaduraDeAioria = new Armadura ("Leon", "Oro");
+            caballeros.Add(new CaballerosDelZodiaco ("Aioria", "Atena", armaduraDeAioria, "Leo"));
+
+            Armadura armaduraDePerseo = new Armadura ("Oceano", "Plata");
+            caballeros.Add(new CaballerosDelZodiaco ("Perseo", "Poseidon", armaduraDePerseo, "Acuario"));
+
+            Console.WriteLine("Armaduras que protegen a Athena: ");
+            
+            List<CaballerosDelZodiaco> armadurasDeAthena = caballeros.Where(caballeros => caballeros.DiosQueProtege == "Atena").ToList();
+            armadurasDeAthena.ForEach(armaduras => Console.WriteLine(armaduras.getArmadura()));
 
 
-            caballeros.ForEach(caballero => Console.WriteLine(caballero.DiosQueProtege
-            .Distinct()
-            .ToList()));
+            Console.WriteLine("Dioses: ");
+
+            List<string> dioses=new List<string>();
+            caballeros.ForEach(i => dioses.Add(i.DiosQueProtege));
+
+            var dioseSinRepetir = dioses.Distinct();
+
+            foreach (var i in dioseSinRepetir) 
+            {
+                Console.WriteLine(i); 
+            }
 
 
             List<string> signos = new List<string>();
@@ -40,14 +58,7 @@ namespace E3
                     signosconC.Add(i);
                 }
             }
-
-            Console.WriteLine("Los signos que empiezan con C son: ");
-
-            foreach (var i in signosconC)
-            {
-                Console.WriteLine(signosconC);
-            }
-
+            signosconC.ForEach(i => Console.WriteLine("Signos del zodiaco que comienzan con 'C': " + i));
         }
     }
 }

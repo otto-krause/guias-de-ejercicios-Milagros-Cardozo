@@ -4,23 +4,23 @@ namespace E3
     {
         private string nombre;
         private string diosQueProtege;
-        private string armaduraNombre;
-        private string armaduraMaterial;
+        private Armadura armadura;
         private string signoZodiacal;
 
-        public CaballerosDelZodiaco(string nombre, string diosQueProtege, string armaduraNombre, string armaduraMaterial, string signoZodiacal)
+        public CaballerosDelZodiaco(string nombre, string diosQueProtege, Armadura armadura, string signoZodiacal)
         {
             this.nombre = nombre;
             this.diosQueProtege = diosQueProtege;
-            this.armaduraNombre = armaduraNombre;
-            this.armaduraMaterial = armaduraMaterial;
+            this.armadura = armadura;
             this.signoZodiacal = signoZodiacal;
         }
 
-        public string Nombre { get => nombre; }
         public string DiosQueProtege { get => diosQueProtege; }
-        public string ArmaduraNombre { get => armaduraNombre; }
-        public string ArmaduraMaterial { get => armaduraMaterial; }
         public string SignoZodiacal { get => signoZodiacal; }
+
+        public string getArmadura()
+        {
+            return "Nombre de la armadura: " + armadura.Nombre + "\nMaterial de la armadura: " + armadura.Material;
+        }
     }
 }
